@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="/Quikprof.Base/base.js" defer></script>
     <link href="/Quikprof.Base/base.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         (function () {
             const nav = performance.getEntriesByType("navigation")[0];
@@ -28,9 +29,8 @@
 
 
     <!---NEVBAR SECTION STARTING {AAK}-->
-    <!-- PREMIUM NAVBAR START -->
     <header class="fixed top-0 z-50 w-full
-               bg-white/70 backdrop-blur-xl
+               bg-white
                border-b border-blue-100">
 
         <nav class="max-w-7xl mx-auto px-5 lg:px-8">
@@ -144,14 +144,308 @@
             </div>
         </div>
     </header>
-
     <!---NEVBAR SECTION ENDING {AAK}-->
 
 
-    <!--MAIN SECTION PASTE-----HERE-->
+    <!--HERO SECTION STARTING {AAK}-->
+    <section class="relative w-full overflow-hidden">
+
+        <!-- Carousel Wrapper -->
+        <div id="carousel" class="relative w-full h-[85vh] md:h-[90vh] overflow-hidden">
+
+            <!-- Slide 1 -->
+            <div class="slide absolute inset-0 opacity-100 transition-opacity duration-700">
+                <picture>
+                    <!-- Mobile image -->
+                    <source srcset="https://quikprof.com/wp-content/uploads/2025/12/5caf6d26-59a3-40f5-9e34-562aabc79612.png"
+                        media="(max-width: 768px)">
+                    <!-- Desktop image -->
+                    <img src="https://quikprof.com/wp-content/uploads/2025/12/2026-1-scaled.jpg"
+                        class="w-full h-full object-cover">
+                </picture>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
+                <picture>
+                    <source srcset="https://images.unsplash.com/photo-1602526219045-42a5a4c5d62b?q=80&w=800"
+                        media="(max-width: 768px)">
+                    <img src="https://fotocentreindia.com/wp-content/uploads/Insta360-Flow-2-Pro-Online-Buy-Mumbai-India.webp"
+                        class="w-full h-full object-cover">
+                </picture>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
+                <picture>
+                    <source srcset="https://quikprof.com/wp-content/uploads/2025/12/5caf6d26-59a3-40f5-9e34-562aabc79612.png"
+                        media="(max-width: 768px)">
+                    <img src="https://fotocentreindia.com/wp-content/uploads/Insta360-X4-Air-Buy-Online-in-Mumbai-India-at-best-offer-price.webp"
+                        class="w-full h-full object-cover">
+                </picture>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
+                <picture>
+                    <source srcset="https://quikprof.com/wp-content/uploads/2025/12/5caf6d26-59a3-40f5-9e34-562aabc79612.png"
+                        media="(max-width: 768px)">
+                    <img src="https://fotocentreindia.com/wp-content/uploads/Fujifilm-Instax-Instant-Cameras.webp"
+                        class="w-full h-full object-cover">
+                </picture>
+            </div>
+
+            <!-- Arrows -->
+            <button onclick="prevSlide()"
+                class="absolute left-6 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur p-3 rounded-full hover:bg-white transition">
+                ←
+            </button>
+            <button onclick="nextSlide()"
+                class="absolute right-6 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur p-3 rounded-full hover:bg-white transition">
+                →
+            </button>
+
+            <!-- Dots -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+                <span class="dot w-2.5 h-2.5 bg-white rounded-full opacity-100"></span>
+                <span class="dot w-2.5 h-2.5 bg-white rounded-full opacity-40"></span>
+                <span class="dot w-2.5 h-2.5 bg-white rounded-full opacity-40"></span>
+                <span class="dot w-2.5 h-2.5 bg-white rounded-full opacity-40"></span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let index = 0;
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+
+        function showSlide(i) {
+            slides.forEach((slide, s) => {
+                slide.style.opacity = s === i ? "1" : "0";
+                dots[s].style.opacity = s === i ? "1" : "0.4";
+            });
+        }
+
+        function nextSlide() {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        }
+
+        function prevSlide() {
+            index = (index - 1 + slides.length) % slides.length;
+            showSlide(index);
+        }
+
+        setInterval(nextSlide, 5000);
+    </script>
+
+    <!--HERO SECTION ENDING {AAK}-->
+
+    <!--SERVICE SHOW SECTION START{AAK}-->
+    <section class="bg-white border-y border-neutral-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+
+                <!-- Item -->
+                <div class="group text-center animate-soft">
+                    <div class="w-16 h-16 mx-auto rounded-2xl 
+                    bg-white border border-neutral-200
+                    shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                    flex items-center justify-center mb-6
+                    transition-all duration-500
+                    group-hover:-translate-y-1
+                    group-hover:shadow-[0_15px_50px_rgba(59,130,246,0.15)]">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.6"
+                            viewBox="0 0 24 24">
+                            <path d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h4 class="text-[15px] font-semibold text-neutral-900">Premium Quality</h4>
+                    <p class="mt-2 text-[14px] text-neutral-500">Handpicked camera accessories</p>
+                </div>
+
+                <!-- Item -->
+                <div class="group text-center animate-soft delay-1">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-white border border-neutral-200
+                    shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                    flex items-center justify-center mb-6
+                    transition-all duration-500
+                    group-hover:-translate-y-1
+                    group-hover:shadow-[0_15px_50px_rgba(59,130,246,0.15)]">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.6"
+                            viewBox="0 0 24 24">
+                            <path d="M3 12h18M16 6l5 6-5 6" />
+                        </svg>
+                    </div>
+                    <h4 class="text-[15px] font-semibold text-neutral-900">Fast Shipping</h4>
+                    <p class="mt-2 text-[14px] text-neutral-500">Quick & secure delivery</p>
+                </div>
+
+                <!-- Item -->
+                <div class="group text-center animate-soft delay-2">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-white border border-neutral-200
+                    shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                    flex items-center justify-center mb-6
+                    transition-all duration-500
+                    group-hover:-translate-y-1
+                    group-hover:shadow-[0_15px_50px_rgba(59,130,246,0.15)]">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.6"
+                            viewBox="0 0 24 24">
+                            <path d="M12 3l7 4v5c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V7l7-4z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-[15px] font-semibold text-neutral-900">Secure Payment</h4>
+                    <p class="mt-2 text-[14px] text-neutral-500">100% safe transactions</p>
+                </div>
+
+                <!-- Item -->
+                <div class="group text-center animate-soft delay-3">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-white border border-neutral-200
+                    shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                    flex items-center justify-center mb-6
+                    transition-all duration-500
+                    group-hover:-translate-y-1
+                    group-hover:shadow-[0_15px_50px_rgba(59,130,246,0.15)]">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.6"
+                            viewBox="0 0 24 24">
+                            <path d="M12 21c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
+                            <path d="M9 9h.01M15 9h.01M10 14c.5.667 1.5.667 2 0" />
+                        </svg>
+                    </div>
+                    <h4 class="text-[15px] font-semibold text-neutral-900">Expert Support</h4>
+                    <p class="mt-2 text-[14px] text-neutral-500">Friendly customer assistance</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @keyframes soft {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-soft {
+            animation: soft 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: .1s;
+        }
+
+        .delay-2 {
+            animation-delay: .2s;
+        }
+
+        .delay-3 {
+            animation-delay: .3s;
+        }
+    </style>
+
+    <!--SERVICE SHOW SECTION END{AAK}-->
+
+
 
 
     <!--FOOTER SECTION STARTING {AAK}-->
+    <footer class="relative bg-white/80 backdrop-blur-xl border-t border-neutral-200 overflow-hidden">
+
+        <!-- Subtle premium top accent -->
+        <div class="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-20">
+
+            <!-- Main -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 animate-soft">
+
+                <!-- Brand Block -->
+                <div>
+                    <img src="https://quikprof.com/wp-content/uploads/2023/07/images.png" class="h-10 mb-6">
+
+                    <h3 class="text-3xl font-semibold tracking-tight text-neutral-900">
+                        Crafted for creators<br>
+                        who care about precision.
+                    </h3>
+
+                    <p class="mt-6 text-neutral-600 max-w-md leading-relaxed">
+                        QuikProf designs premium camera accessories that balance performance,
+                        durability and refined design for professionals and serious creators.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div class="grid grid-cols-2 gap-12 text-sm">
+
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6">Products</p>
+                        <ul class="space-y-4 text-neutral-600">
+                            <li><a href="#" class="hover:text-black transition">Tripods</a></li>
+                            <li><a href="#" class="hover:text-black transition">Mounts</a></li>
+                            <li><a href="#" class="hover:text-black transition">Lighting</a></li>
+                            <li><a href="#" class="hover:text-black transition">Accessories</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-6">Support</p>
+                        <ul class="space-y-4 text-neutral-600">
+                            <li><a href="#" class="hover:text-black transition">Contact</a></li>
+                            <li><a href="#" class="hover:text-black transition">Shipping</a></li>
+                            <li><a href="#" class="hover:text-black transition">Returns</a></li>
+                            <li><a href="#" class="hover:text-black transition">Warranty</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div
+                class="mt-20 pt-8 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-neutral-500 animate-soft delay">
+                <p>© 2026 QuikProf. Built for creators.</p>
+
+                <div class="flex gap-10">
+                    <a href="#" class="hover:text-black transition">Privacy</a>
+                    <a href="#" class="hover:text-black transition">Terms</a>
+                    <a href="#" class="hover:text-black transition">Refunds</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <style>
+        @keyframes soft {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-soft {
+            animation: soft 1s ease forwards;
+        }
+
+        .delay {
+            animation-delay: .3s;
+        }
+    </style>
 
     <!--FOOTER SECTION ENDING {AAK}-->
 
