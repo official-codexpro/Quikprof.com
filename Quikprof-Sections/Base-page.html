@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/Quikprof.Base/base.js" defer></script>
+    <link href="/Quikprof.Base/base.css" rel="stylesheet" />
+    <script>
+        (function () {
+            const nav = performance.getEntriesByType("navigation")[0];
+            const isReload = nav && nav.type === "reload";
+
+            if (sessionStorage.getItem("glamaura-visited") && !isReload) {
+                document.documentElement.classList.add("loader-skip");
+            }
+        })();
+    </script>
+</head>
+
+<body style="margin: 0; padding: 0;">
+
+    <!---ANIMATION SECTION STARTING {AAK}-->
+
+    <!---ANIMATION SECTION ENDING {AAK}-->
+
+
+    <!---NEVBAR SECTION STARTING {AAK}-->
+    <!-- PREMIUM NAVBAR START -->
+    <header class="fixed top-0 z-50 w-full
+               bg-white/70 backdrop-blur-xl
+               border-b border-blue-100">
+
+        <nav class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+
+                <!-- Logo (Image) -->
+                <div class="flex items-center gap-3">
+                    <img src="https://quikprof.com/wp-content/uploads/2023/07/images.png" alt="QUIKPROF"
+                        class="h-9 w-auto object-contain" />
+
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+
+                    <li>
+                        <a href="#" class="relative group">
+                            Home
+                            <span
+                                class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="relative group">
+                            Products
+                            <span
+                                class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="relative group">
+                            Categories
+                            <span
+                                class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="relative group">
+                            Deals
+                            <span
+                                class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="relative group">
+                            Support
+                            <span
+                                class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- Right Side -->
+                <div class="hidden md:flex items-center gap-3">
+
+                    <!-- Search -->
+                    <div class="flex items-center bg-gray-100 px-4 py-2 rounded-full w-52
+                    focus-within:ring-2 focus-within:ring-blue-500">
+                        <input type="text" placeholder="Search products..."
+                            class="bg-transparent outline-none text-sm w-full placeholder:text-gray-400" />
+                    </div>
+
+                    <!-- Account -->
+                    <button class="p-2 rounded-full hover:bg-gray-100 transition">👤</button>
+
+                    <!-- Cart -->
+                    <button class="relative p-2 rounded-full hover:bg-gray-100 transition">
+                        🛒
+                        <span
+                            class="absolute -top-1 -right-1 bg-blue-600 text-white text-[10px] px-1.5 rounded-full">3</span>
+                    </button>
+                </div>
+
+                <!-- Mobile -->
+                <button onclick="toggleMenu()" class="md:hidden text-2xl text-gray-800">
+                    ☰
+                </button>
+
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden
+              bg-white/95 backdrop-blur-xl
+              border-t border-blue-100">
+            <div class="max-w-7xl mx-auto px-6 py-6
+                flex flex-col gap-4
+                text-sm font-medium text-gray-800">
+
+                <a class="hover:text-blue-600" href="#">Home</a>
+                <a class="hover:text-blue-600" href="#">Products</a>
+                <a class="hover:text-blue-600" href="#">Categories</a>
+                <a class="hover:text-blue-600" href="#">Deals</a>
+                <a class="hover:text-blue-600" href="#">Support</a>
+
+                <a href="#" class="text-center py-2 rounded-full
+              border border-blue-500 text-blue-600 font-semibold">
+                    👤 Login / Signup
+                </a>
+
+                <a href="#" class="text-center py-2 rounded-full
+              bg-gradient-to-r from-blue-600 to-indigo-600
+              text-white font-semibold shadow">
+                    🛒 View Cart
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!---NEVBAR SECTION ENDING {AAK}-->
+
+
+    <!--MAIN SECTION PASTE-----HERE-->
+
+
+    <!--FOOTER SECTION STARTING {AAK}-->
+
+    <!--FOOTER SECTION ENDING {AAK}-->
+
+</body>
+
+</html>
